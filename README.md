@@ -23,7 +23,7 @@ Status: ✅ Operational (80%+ confidence on urgent alerts).
 
 🛠️ Setup & Installation
 
-1. Clone the repository: git clone [https://github.com/AmanCode9/resq-ai-system.git](https://github.com/AmanCode9/RESQ-AI-system.git)
+1. Clone the repository: git clone https://github.com/AmanCode9/RESQ-AI-system.git
 cd RESQ-AI-system
 
 2. Create a Virtual Environment (Recommended):
