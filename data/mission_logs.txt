@@ -1,1 +1,11 @@
 URGENT ALERT: Help! We are trapped on the roof at 5th and Main. Water is rising fast. (Conf: 80.09%)
+[2026-03-31 00:49:40] URGENT ALERT
+Message: Help! We are trapped on the roof at 5th and Main. Water is rising fast.
+Location: 5th and Main
+Confidence: 80.09%
+
+[2026-03-31 00:50:40] URGENT ALERT
+Message: Help! We are trapped on the roof at 5th and Main.
+Location: 5th and Main
+Confidence: 76.96%
+
