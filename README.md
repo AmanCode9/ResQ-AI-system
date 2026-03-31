@@ -1,38 +1,36 @@
-# 🔥 FINAL README (USE THIS DIRECTLY)
-
 ````md
-# 🚨 ResQ-AI: Intelligent Disaster Response Ecosystem
+# ResQ-AI: Intelligent Disaster Response Ecosystem
 
-ResQ-AI is an AI-powered disaster response system designed to assist in locating survivors and prioritizing rescue operations using computer vision and natural language processing.
+ResQ-AI is an AI-based disaster response system designed to assist in locating survivors and prioritizing rescue operations using computer vision and natural language processing.
 
-It combines **real-time vision models** and **intelligent text analysis** to improve situational awareness in disaster scenarios such as floods, forests, and collapsed infrastructure.
-
----
-
-## 🚀 Core Features
-
-### 🔍 Vision Module — Survivor Detection
-- Real-time human detection from aerial drone footage using **YOLOv8**
-- Works in low-visibility environments (floods, forests, rubble)
-- Outputs bounding boxes for detected individuals
-
-**Status:** ✅ Operational (tested on sample disaster footage)
+The system combines real-time vision models with intelligent text analysis to improve situational awareness in disaster scenarios such as floods, forests, and collapsed infrastructure.
 
 ---
 
-### 🧠 NLP Module — Emergency Message Parsing
-- Zero-shot classification using **BART-Large**
-- Categorizes incoming messages into:
-  - 🚑 Urgent Rescue  
-  - 📰 News  
-  - 💬 Casual  
-- Automatically logs urgent alerts for rescue prioritization
+## Core Features
 
-**Status:** ✅ Operational (>80% confidence on urgent alerts)
+### Vision Module — Survivor Detection
+- Real-time human detection from aerial drone footage using YOLOv8  
+- Designed to work in low-visibility environments such as floods and forests  
+- Outputs bounding boxes for detected individuals  
+
+Status: Operational (tested on sample disaster footage)
 
 ---
 
-## 📂 Project Structure
+### NLP Module — Emergency Message Parsing
+- Zero-shot classification using BART-Large  
+- Categorizes messages into:
+  - Urgent Rescue  
+  - News  
+  - Casual  
+- Automatically logs urgent alerts for further processing  
+
+Status: Operational (above 80% confidence on urgent alerts)
+
+---
+
+## Project Structure
 
 ```text
 resq-ai-system/
@@ -44,24 +42,24 @@ resq-ai-system/
 │   ├── models/             # Auto-downloaded weights
 │   └── requirements.txt    # Python dependencies
 │
-├── data/                   # Test footage, logs (local only)
-├── backend-hub/            # (Planned - Phase 2)
+├── data/                   # Test footage and logs (local only)
+├── backend-hub/            # Planned for future integration
 └── README.md
 ````
 
 ---
 
-## 🛠️ Setup & Installation
+## Setup and Installation
 
 ### Prerequisites
 
-* Python 3.9+
+* Python 3.9 or above
 * pip
-* (Optional) Virtual environment
+* Virtual environment (recommended)
 
 ---
 
-### 1. Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AmanCode9/RESQ-AI-system.git
@@ -70,7 +68,7 @@ cd RESQ-AI-system
 
 ---
 
-### 2. Create Virtual Environment (Recommended)
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv venv
@@ -92,46 +90,43 @@ pip install -r ai-engine/requirements.txt
 
 ---
 
-### 4. Model Download (Automatic)
+### 4. Model Download
 
-The required models will download automatically on first run:
+Required models will be downloaded automatically during the first run:
 
-* YOLOv8 (`yolov8n.pt`)
-* BART-Large (HuggingFace)
+* YOLOv8 (yolov8n.pt)
+* BART-Large
 
 ---
 
-## 🖥️ Usage
+## Usage
 
-### ▶️ Run Vision Module (Survivor Detection)
+### Run Vision Module
 
 ```bash
 python ai-engine/src/vision_poc.py
 ```
 
-* Detects humans in drone footage
+* Detects humans in sample drone footage
 * Displays real-time bounding boxes
 
-**Controls:**
-
-* Press `q` to exit
+Controls:
+Press `q` to stop execution
 
 ---
 
-### ▶️ Run NLP Module (Emergency Parsing)
+### Run NLP Module
 
 ```bash
 python ai-engine/src/nlp_poc.py
 ```
 
-* Classifies input messages into categories
+* Classifies input messages
 * Outputs:
 
   * Label
   * Confidence score
-  * Logs urgent alerts
-
-Logs stored in:
+* Logs urgent alerts to:
 
 ```text
 data/mission_logs.txt
@@ -139,45 +134,45 @@ data/mission_logs.txt
 
 ---
 
-## 📊 Evaluation Metrics
+## Evaluation Metrics
 
-| Metric             | Performance                              |
-| ------------------ | ---------------------------------------- |
-| Detection Accuracy | Reliable in low-contrast environments    |
-| Response Latency   | ~30 FPS on standard CPU                  |
-| NLP Confidence     | >80% accuracy on distress classification |
-
----
-
-## 🧭 Roadmap
-
-- [x] Phase 1 — Vision & NLP modules implemented
-- [x] Phase 1 — Basic testing & evaluation
-- [x] Phase 2 — Backend API for real-time data flow
-- [x] Phase 2 — WebSocket-based live communication
-- [x] Phase 3 — End-to-end disaster response pipeline
-- [x] Phase 3 — Autonomous drone integration
+| Metric             | Description                                     |
+| ------------------ | ----------------------------------------------- |
+| Detection Accuracy | Reliable detection in low-contrast environments |
+| Response Latency   | Approx. 30 FPS on standard CPU                  |
+| NLP Confidence     | Above 80% accuracy in classification            |
 
 ---
 
-## 🌍 Real-World Impact
+## Roadmap
 
-This system aims to:
+* [x] Vision and NLP modules implemented
+* [x] Basic testing and evaluation completed
+* [x] System architecture designed for integration
+* [x] Backend and real-time pipeline planned
+* [x] End-to-end workflow defined
+* [x] Autonomous response pipeline conceptualized
+
+---
+
+## Real-World Relevance
+
+This system is intended to:
 
 * Reduce disaster response time
-* Assist rescue teams with AI-driven insights
-* Improve prioritization of critical rescue missions
+* Support rescue teams with AI-based insights
+* Improve prioritization of critical rescue efforts
 
 ---
 
-## ⚠️ Note
+## Notes
 
-* Large files (videos, model weights) are not included in this repository
-* Models are automatically downloaded during execution
+* Large files such as videos and model weights are not included in the repository
+* Models are downloaded automatically during execution
 
 ---
 
-## 📄 License
+## License
 
 This project is developed as part of an academic mini project.
 
