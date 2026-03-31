@@ -1,4 +1,4 @@
-````md
+
 # ResQ-AI: Intelligent Disaster Response Ecosystem
 
 ResQ-AI is an AI-based disaster response system designed to assist in locating survivors and prioritizing rescue operations using computer vision and natural language processing.
@@ -45,9 +45,8 @@ resq-ai-system/
 ├── data/                   # Test footage and logs (local only)
 ├── backend-hub/            # Planned for future integration
 └── README.md
-````
 
----
+
 
 ## Setup and Installation
 
