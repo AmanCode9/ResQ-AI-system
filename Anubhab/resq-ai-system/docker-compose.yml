@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  # AI Engine Service
+  ai-engine:
+    build:
+      context: ./ai-engine
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONPATH=/app/src
+    volumes:
+      - ./ai-engine/models:/app/models
+      - ./ai-engine/training:/app/training
+    networks:
+      - resq-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Backend Hub Service
+  backend-hub:
+    build:
+      context: ./backend-hub
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - AI_ENGINE_URL=http://ai-engine:5000
+      - PORT=8000
+    depends_on:
+      ai-engine:
+        condition: service_healthy
+    networks:
+      - resq-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/system/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend Dashboard Service
+  frontend-dashboard:
+    build:
+      context: ./frontend-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+      - NEXT_PUBLIC_MAPBOX_TOKEN=${MAPBOX_TOKEN}
+    depends_on:
+      backend-hub:
+        condition: service_healthy
+    networks:
+      - resq-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Database Service (Optional - for production)
+  # mongodb:
+  #   image: mongo:7.0
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongodb_data:/data/db
+  #   networks:
+  #     - resq-network
+
+networks:
+  resq-network:
+    driver: bridge
+
+# volumes:
+#   mongodb_data:

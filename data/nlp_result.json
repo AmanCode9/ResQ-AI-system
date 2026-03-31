@@ -1,0 +1,9 @@
+{
+  "module": "nlp",
+  "message": "Help! We are stuck at airport, need rescue immediately!",
+  "classification": "URGENT DISASTER RESCUE",
+  "confidence": 0.8603,
+  "location": "airport, need rescue immediately",
+  "status": "HIGH PRIORITY ALERT",
+  "timestamp": "2026-03-31 13:19:50"
+}

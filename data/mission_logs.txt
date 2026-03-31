@@ -9,3 +9,8 @@ Message: Help! We are trapped on the roof at 5th and Main.
 Location: 5th and Main
 Confidence: 76.96%
 
+[2026-03-31 13:19:50] URGENT ALERT
+Message: Help! We are stuck at airport, need rescue immediately!
+Location: airport, need rescue immediately
+Confidence: 86.03%
+

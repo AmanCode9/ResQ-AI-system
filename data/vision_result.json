@@ -1,0 +1,6 @@
+{
+  "video": "drone_footage.mp4",
+  "human_detected": true,
+  "total_detected_frames": 3,
+  "detected_frames": [150, 420, 780]
+}
